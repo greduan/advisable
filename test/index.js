@@ -52,6 +52,36 @@ describe('advisable', function () {
       });
   });
 
+  it('Should call functions passed to .before with args passed to returned function', function () {
+    var res = ad(function () {});
+    var d = td.function();
+
+    res.before(function (a, b) {
+      d(a, b);
+    });
+
+    res(1, 2);
+
+    return res(1, 2)
+      .then(function () {
+        td.verify(d(1, 2));
+      });
+  });
+
+  it('Should call functions passed to .after with args passed to returned function', function () {
+    var res = ad(function () {});
+    var d = td.function();
+
+    res.after(function (a, b) {
+      d(a, b);
+    });
+
+    return res(1, 2)
+      .then(function () {
+        td.verify(d(1, 2));
+      });
+  });
+
   it('Should call .before functions in order', function () {
     var res = ad(function () {});
     var d = td.function();
