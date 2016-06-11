@@ -4,9 +4,16 @@
   "private": true,
   "main": "lib/index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "mocha"
   },
   "author": "Eduardo Lavaque <me@greduan.com> (http://greduan.com)",
   "license": "ISC",
-  "description": "Make functions advisable"
+  "description": "Make functions advisable",
+  "devDependencies": {
+    "mocha": "2.5.3",
+    "testdouble": "1.4.2"
+  },
+  "dependencies": {
+    "bluebird": "3.4.0"
+  }
 }
