@@ -48,6 +48,18 @@ wrapped.after(...);
 wrapped(1, 2);
 ```
 
+## Tests
+
+Please note that ATM the last two tests fail, they'll probably never stop
+failing.
+
+```
+$ git clone https://github.com/greduan/advisable.git
+$ cd advisable
+$ npm i
+$ npm test
+```
+
 ## License
 
 Licensed under the permissive ISC license.  Check the `LICENSE` file for further
