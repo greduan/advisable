@@ -92,7 +92,7 @@ describe('advisable', function () {
           d('one');
 
           resolve();
-        }, 1000);
+        }, 100);
       });
     });
 
@@ -119,7 +119,34 @@ describe('advisable', function () {
           d('one');
 
           resolve();
-        }, 1000);
+        }, 100);
+      });
+    });
+
+    res.after(function () {
+      d('two');
+
+      return Promise.resolve();
+    });
+
+    return res()
+      .then(function () {
+        td.verify(d('one'));
+        td.verify(d('two'));
+      });
+  });
+
+  it('Should call .after functions AFTER .before functions', function () {
+    var res = ad(function () {});
+    var d = td.function();
+
+    res.before(function () {
+      return new Promise(function (resolve) {
+        setTimeout(function () {
+          d('one');
+
+          resolve();
+        }, 100);
       });
     });
 
