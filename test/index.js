@@ -104,6 +104,7 @@ describe('advisable', function () {
 
     return res()
       .then(function () {
+        // TODO: Doesn't properly test for order
         td.verify(d('one'));
         td.verify(d('two'));
       });
@@ -131,6 +132,7 @@ describe('advisable', function () {
 
     return res()
       .then(function () {
+        // TODO: Doesn't properly test for order
         td.verify(d('one'));
         td.verify(d('two'));
       });
@@ -158,6 +160,7 @@ describe('advisable', function () {
 
     return res()
       .then(function () {
+        // TODO: Doesn't properly test for order
         td.verify(d('one'));
         td.verify(d('two'));
       });
